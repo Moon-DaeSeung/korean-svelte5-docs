@@ -1,16 +1,16 @@
 ---
-title: Text inputs
+title: 텍스트 입력
 ---
 
-As a general rule, data flow in Svelte is _top down_ — a parent component can set props on a child component, and a component can set attributes on an element, but not the other way around.
+일반적인 규칙으로, Svelte의 데이터 흐름은 _위에서 아래로_ 흐릅니다 — 부모 컴포넌트는 자식 컴포넌트에 props를 설정할 수 있고, 컴포넌트는 엘리먼트에 속성을 설정할 수 있지만 그 반대는 불가능합니다.
 
-Sometimes it's useful to break that rule. Take the case of the `<input>` element in this component — we _could_ add an `oninput` event handler that sets the value of `name` to `event.target.value`, but it's a bit... boilerplatey. It gets even worse with other form elements, as we'll see.
+때로는 이 규칙을 깨는 것이 유용할 수 있습니다. 이 컴포넌트의 `<input>` 엘리먼트를 예로 들면 — `oninput` 이벤트 핸들러를 추가하여 `name` 값을 `event.target.value`로 설정할 수 있지만, 이는 약간... 판에 박힌 코드처럼 보입니다. 다른 폼 엘리먼트들과 함께 사용하면 더 복잡해집니다.
 
-Instead, we can use the `bind:value` directive:
+대신, `bind:value` 디렉티브를 사용할 수 있습니다:
 
 ```svelte
 /// file: App.svelte
 <input +++bind:+++value={name}>
 ```
 
-This means that not only will changes to the value of `name` update the input value, but changes to the input value will update `name`.
+이는 `name` 값의 변경이 input 값을 업데이트할 뿐만 아니라, input 값의 변경도 `name`을 업데이트한다는 것을 의미합니다.

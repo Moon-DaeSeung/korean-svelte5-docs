@@ -1,10 +1,10 @@
 ---
-title: Numeric inputs
+title: 숫자 입력
 ---
 
-In the DOM, every input value is a string. That's unhelpful when you're dealing with numeric inputs — `type="number"` and `type="range"` — as it means you have to remember to coerce `input.value` before using it.
+DOM에서는 모든 입력 값이 문자열입니다. 이는 숫자 입력(`type="number"`와 `type="range"`)을 다룰 때 불편합니다 - 사용하기 전에 `input.value`를 형변환해야 하기 때문입니다.
 
-With `bind:value`, Svelte takes care of it for you:
+`bind:value`를 사용하면 Svelte가 이를 자동으로 처리해줍니다:
 
 ```svelte
 /// file: App.svelte

@@ -1,10 +1,10 @@
 ---
-title: Component styles
+title: 컴포넌트 스타일
 ---
 
-Often, you need to influence the styles inside a child component. Perhaps we want to make these boxes red, green and blue.
+종종 자식 컴포넌트 내부의 스타일에 영향을 주어야 할 때가 있습니다. 이 박스들을 빨강, 초록, 파랑으로 만들고 싶다고 가정해봅시다.
 
-One way to do this is with the `:global` CSS modifier, which allows you to indiscriminately target elements inside other components:
+한 가지 방법은 `:global` CSS 수정자를 사용하는 것입니다. 이를 통해 다른 컴포넌트 내부의 요소를 무차별적으로 대상으로 지정할 수 있습니다:
 
 ```svelte
 /// file: App.svelte
@@ -23,11 +23,11 @@ One way to do this is with the `:global` CSS modifier, which allows you to indis
 </style>
 ```
 
-But there are lots of reasons _not_ to do that. For one thing, it's extremely verbose. For another, it's brittle — any changes to the implementation details of `Box.svelte` could break the selector.
+하지만 이렇게 하지 않는 것이 좋습니다. 우선 매우 장황합니다. 또한 깨지기 쉽습니다 — `Box.svelte`의 구현 세부사항이 변경되면 선택자가 깨질 수 있습니다.
 
-Most of all though, it's rude. Components should be able to decide for themselves which styles can be controlled from 'outside', in the same way they decide which variables are exposed as props. `:global` should be used as an escape hatch — a last resort.
+무엇보다도, 이는 예의 없는 방법입니다. 컴포넌트는 변수를 props로 노출하는 것과 같은 방식으로 어떤 스타일이 '외부'에서 제어될 수 있는지 스스로 결정할 수 있어야 합니다. `:global`은 마지막 수단으로 사용되어야 합니다.
 
-Inside `Box.svelte`, change `background-color` so that it is determined by a [CSS custom property](https://developer.mozilla.org/en-US/docs/Web/CSS/--*):
+`Box.svelte` 내부에서 `background-color`를 [CSS 커스텀 속성](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)으로 결정되도록 변경하세요:
 
 ```svelte
 /// file: Box.svelte
@@ -42,7 +42,7 @@ Inside `Box.svelte`, change `background-color` so that it is determined by a [CS
 </style>
 ```
 
-Any parent element (such as `<div class="boxes">`) can set the value of `--color`, but we can also set it on individual components:
+모든 부모 요소(예: `<div class="boxes">`)가 `--color` 값을 설정할 수 있지만, 개별 컴포넌트에도 설정할 수 있습니다:
 
 ```svelte
 /// file: App.svelte
@@ -53,14 +53,14 @@ Any parent element (such as `<div class="boxes">`) can set the value of `--color
 </div>
 ```
 
-The values can be dynamic, like any other attribute.
+값은 다른 속성처럼 동적일 수 있습니다.
 
-> [!NOTE] This feature works by wrapping each component in an element with `display: contents`, where needed, and applying the custom properties to it. If you inspect the elements, you'll see markup like this:
+> [!NOTE] 이 기능은 필요한 경우 각 컴포넌트를 `display: contents`를 가진 요소로 감싸고 여기에 커스텀 속성을 적용하는 방식으로 작동합니다. 요소를 검사해보면 다음과 같은 마크업을 볼 수 있습니다:
 >
 > ```svelte
 > <svelte-css-wrapper style="display: contents; --color: red;">
-> 	<!-- contents -->
+> 	<!-- 내용 -->
 > </svelte-css-wrapper>
 > ```
 >
-> Because of `display: contents` this won't affect your layout, but the extra element _can_ affect selectors like `.parent > .child`.
+> `display: contents` 때문에 레이아웃에는 영향을 주지 않지만, 추가 요소는 `.parent > .child`와 같은 선택자에 영향을 줄 수 있습니다.

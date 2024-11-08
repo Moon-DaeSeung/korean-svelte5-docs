@@ -1,8 +1,8 @@
 ---
-title: The style directive
+title: style 디렉티브
 ---
 
-As with `class`, you can write your inline `style` attributes literally, because Svelte is really just HTML with fancy bits:
+`class`와 마찬가지로 인라인 `style` 속성을 문자 그대로 작성할 수 있습니다. Svelte는 결국 멋진 기능이 추가된 HTML이기 때문입니다:
 
 ```svelte
 /// file: App.svelte
@@ -13,7 +13,7 @@ As with `class`, you can write your inline `style` attributes literally, because
 >
 ```
 
-When you have a lot of styles, it can start to look a bit wacky. We can tidy things up by using the `style:` directive:
+스타일이 많아지면 코드가 지저분해 보일 수 있습니다. `style:` 디렉티브를 사용하여 정리할 수 있습니다:
 
 ```svelte
 /// file: App.svelte
