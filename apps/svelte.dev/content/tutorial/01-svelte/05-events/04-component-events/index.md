@@ -1,8 +1,8 @@
 ---
-title: Component events
+title: 컴포넌트 이벤트
 ---
 
-You can pass event handlers to components like any other prop. In `Stepper.svelte`, add `increment` and `decrement` props...
+다른 prop처럼 이벤트 핸들러를 컴포넌트에 전달할 수 있습니다. `Stepper.svelte`에서 `increment`와 `decrement` prop을 추가하세요...
 
 ```svelte
 /// file: Stepper.svelte
@@ -11,7 +11,7 @@ You can pass event handlers to components like any other prop. In `Stepper.svelt
 </script>
 ```
 
-...and wire them up:
+...그리고 연결하세요:
 
 ```svelte
 /// file: Stepper.svelte
@@ -19,7 +19,7 @@ You can pass event handlers to components like any other prop. In `Stepper.svelt
 <button +++onclick={increment}+++>+1</button>
 ```
 
-In `App.svelte`, define the handlers:
+`App.svelte`에서 핸들러를 정의하세요:
 
 ```svelte
 <Stepper

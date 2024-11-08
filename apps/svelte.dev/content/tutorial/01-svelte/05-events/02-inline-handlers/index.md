@@ -1,8 +1,8 @@
 ---
-title: Inline handlers
+title: 인라인 핸들러
 ---
 
-You can also declare event handlers inline:
+이벤트 핸들러를 인라인으로 선언할 수도 있습니다:
 
 ```svelte
 /// file: App.svelte
@@ -21,6 +21,6 @@ You can also declare event handlers inline:
 		m.y = event.clientY;
 	}+++}
 >
-	The pointer is at {m.x} x {m.y}
+	포인터의 위치: {m.x} x {m.y}
 </div>
 ```
