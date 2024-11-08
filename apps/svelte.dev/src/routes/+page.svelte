@@ -10,11 +10,11 @@
 </script>
 
 <svelte:head>
-	<title>Svelte • Web development for the rest of us</title>
+	<title>Svelte • 우리 모두를 위한 웹 개발</title>
 
 	<meta name="twitter:title" content="Svelte" />
-	<meta name="twitter:description" content="Web development for the rest of us" />
-	<meta name="Description" content="Web development for the rest of us" />
+	<meta name="twitter:description" content="우리 모두를 위한 웹 개발" />
+	<meta name="Description" content="우리 모두를 위한 웹 개발" />
 </svelte:head>
 
 <div class="home">

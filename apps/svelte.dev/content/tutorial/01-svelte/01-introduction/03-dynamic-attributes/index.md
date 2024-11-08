@@ -1,36 +1,36 @@
 ---
-title: Dynamic attributes
+title: 동적 속성
 ---
 
-Just like you can use curly braces to control text, you can use them to control element attributes.
+텍스트를 제어하기 위해 중괄호를 사용할 수 있는 것처럼, 요소의 속성을 제어하기 위해서도 중괄호를 사용할 수 있습니다.
 
-Our image is missing a `src` — let's add one:
+우리의 이미지에는 `src`가 없습니다 — 추가해봅시다:
 
 ```svelte
 /// file: App.svelte
 <img +++src={src}+++ />
 ```
 
-That's better. But if you hover over the `<img>` in the editor, Svelte is giving us a warning:
+이제 좀 더 나아졌네요. 하지만 에디터에서 `<img>`에 마우스를 올려보면, Svelte가 경고를 보여줍니다:
 
 ```
-`<img>` element should have an alt attribute
+`<img>` 요소에는 alt 속성이 있어야 합니다
 ```
 
-When building web apps, it's important to make sure that they're _accessible_ to the broadest possible userbase, including people with (for example) impaired vision or motion, or people without powerful hardware or good internet connections. Accessibility (shortened to a11y) isn't always easy to get right, but Svelte will help by warning you if you write inaccessible markup.
+웹 앱을 만들 때는 시각 장애가 있는 사람이나 모션에 민감한 사람, 또는 고성능 하드웨어나 좋은 인터넷 연결이 없는 사람들을 포함하여 가능한 한 넓은 사용자층이 접근할 수 있도록 하는 것이 중요합니다. 접근성(a11y로 축약됨)을 올바르게 구현하는 것이 항상 쉽지는 않지만, Svelte는 접근성이 떨어지는 마크업을 작성할 경우 경고를 통해 도움을 줍니다.
 
-In this case, we're missing the `alt` attribute that describes the image for people using screenreaders, or people with slow or flaky internet connections that can't download the image. Let's add one:
+이 경우에는 스크린리더를 사용하는 사람들이나 느리거나 불안정한 인터넷 연결로 인해 이미지를 다운로드할 수 없는 사람들을 위해 이미지를 설명하는 `alt` 속성이 누락되었습니다. 추가해봅시다:
 
 ```svelte
 /// file: App.svelte
-<img src={src} +++alt="A man dances."+++ />
+<img src={src} +++alt="춤추는 남자."+++ />
 ```
 
-We can use curly braces _inside_ attributes. Try changing it to `"{name} dances."` — remember to declare a `name` variable in the `<script>` block.
+속성 _안에서도_ 중괄호를 사용할 수 있습니다. `"{name} dances."`로 변경해보세요 — `<script>` 블록에 `name` 변수를 선언하는 것을 잊지 마세요.
 
-## Shorthand attributes
+## 속성 단축 표기법
 
-It's not uncommon to have an attribute where the name and value are the same, like `src={src}`. Svelte gives us a convenient shorthand for these cases:
+`src={src}`처럼 속성의 이름과 값이 같은 경우가 자주 있습니다. Svelte는 이런 경우를 위한 편리한 단축 표기법을 제공합니다:
 
 ```svelte
 /// file: App.svelte

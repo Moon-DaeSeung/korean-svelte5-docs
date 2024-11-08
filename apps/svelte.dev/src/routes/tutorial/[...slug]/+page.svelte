@@ -462,4 +462,8 @@
 			display: none;
 		}
 	}
+
+	.content :global(h2) {
+		text-wrap: balance;
+	}
 </style>

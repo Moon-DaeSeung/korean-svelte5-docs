@@ -57,3 +57,7 @@
 {#if browser}
 	<SearchBox />
 {/if}
+
+<style>
+</style>
+

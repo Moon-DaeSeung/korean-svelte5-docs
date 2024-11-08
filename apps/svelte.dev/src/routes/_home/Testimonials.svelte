@@ -1,26 +1,22 @@
 <div class="outer">
 	<p class="definition">
-		<enhanced:img
-			class="pronunciation"
-			alt="Svelte pronunciation guide"
-			src="./svelte-pronunciation.svg"
-		/>
+		<enhanced:img class="pronunciation" alt="Svelte 발음 가이드" src="./svelte-pronunciation.svg" />
 
 		<span class="description">
-			<span class="adjective"></span> attractively thin, graceful and stylish
+			<span class="adjective"></span> 가볍고 빠르고 쉬운 프레임워크
 		</span>
 	</p>
 
 	<div class="blurb">
 		<p>
-			Svelte is a UI framework that uses a compiler to let you write breathtakingly concise
-			components that do minimal work in the browser, using languages you already know — HTML, CSS
-			and JavaScript. <strong>It’s a love letter to web development.</strong>
+			Svelte는 컴파일러를 사용하여 브라우저에서 최소한의 작업만 수행하는 놀랍도록 간결한 컴포넌트를
+			작성할 수 있게 해주는 UI 프레임워크입니다. HTML, CSS, JavaScript와 같이 여러분이 이미 알고
+			있는 언어를 사용합니다. <strong>웹 개발에 대한 러브레터입니다.</strong>
 		</p>
 
 		<p>
-			But don’t take our word for it. Developers consistently rank Svelte as the framework they’re
-			most excited about using.
+			직접 판단해보세요. 개발자들은 지속적으로 Svelte를 가장 사용하고 싶은 프레임워크로 꼽고
+			있습니다.
 		</p>
 	</div>
 
@@ -29,7 +25,7 @@
 		<a href="https://survey.stackoverflow.co/2024/technology#2-web-frameworks-and-technologies">
 			<enhanced:img
 				class="screenshot"
-				alt="Stack Overflow 2024 Developer Survey"
+				alt="Stack Overflow 2024 개발자 설문조사"
 				src="./stack-overflow.png?w=1200,1600"
 			></enhanced:img>
 		</a>
@@ -37,13 +33,13 @@
 		<a href="https://2023.stateofjs.com/en-US/libraries/front-end-frameworks/">
 			<enhanced:img
 				class="screenshot"
-				alt="State of JavaScript 2023"
+				alt="2023년 JavaScript 현황"
 				src="./state-of-js-chart.png?w=1000,1400"
 			></enhanced:img>
 		</a>
 
 		<a href="https://x.com/flaviocopes/status/1730895911864189299">
-			<enhanced:img class="screenshot" alt="Tweet from @flaviocopes" src="./flavio-light.png?w=800"
+			<enhanced:img class="screenshot" alt="@flaviocopes의 트윗" src="./flavio-light.png?w=800"
 			></enhanced:img>
 		</a>
 	</div>

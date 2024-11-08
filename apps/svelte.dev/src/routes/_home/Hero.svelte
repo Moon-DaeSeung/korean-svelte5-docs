@@ -8,8 +8,8 @@
 
 <div class="hero">
 	<div class="hero-content">
-		<h1>web development for the rest of us</h1>
-		<a href="/docs" class="cta">get started <Icon name="arrow-right" /></a>
+		<h1>{`스벨트5에 입문하는\n한국인 여러분들!\n환영합니다!`}</h1>
+		<a href="/docs" class="cta">시작하기 <Icon name="arrow-right" /></a>
 	</div>
 
 	<picture class="machine">
@@ -90,8 +90,9 @@
 	}
 
 	h1 {
-		max-width: 9em;
+		max-width: 11em;
 		margin-bottom: 0.5em;
+		white-space: pre-line;
 	}
 
 	.machine img {

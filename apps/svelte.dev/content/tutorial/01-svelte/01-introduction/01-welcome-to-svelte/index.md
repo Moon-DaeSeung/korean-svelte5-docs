@@ -1,30 +1,30 @@
 ---
-title: Welcome to Svelte
+title: Svelte에 오신 것을 환영합니다
 ---
 
-Welcome to the Svelte tutorial! This will teach you everything you need to know to easily build web applications of all sizes, with high performance and a small footprint.
+Svelte 튜토리얼에 오신 것을 환영합니다! 이 튜토리얼에서는 고성능과 작은 용량으로 모든 규모의 웹 애플리케이션을 쉽게 구축하는 데 필요한 모든 것을 배우게 됩니다.
 
-You can also consult the [API docs](https://svelte.dev/docs) and visit the [playground](https://svelte.dev/playground), or — if you're impatient to start hacking on your machine locally — create a project with `npx sv create`.
+[API 문서](https://svelte.dev/docs)를 참고하거나 [플레이그라운드](https://svelte.dev/playground)를 방문할 수도 있습니다. 또는 로컬 환경에서 바로 개발을 시작하고 싶다면 `npx sv create` 명령어로 프로젝트를 생성할 수 있습니다.
 
-## What is Svelte?
+## Svelte란 무엇인가요?
 
-Svelte is a tool for building web applications. Like other user interface frameworks, it allows you to build your app _declaratively_ out of components that combine markup, styles and behaviours.
+Svelte는 웹 애플리케이션을 구축하기 위한 도구입니다. 다른 사용자 인터페이스 프레임워크처럼 마크업, 스타일, 동작을 결합한 컴포넌트를 사용하여 앱을 _선언적으로_ 구축할 수 있습니다.
 
-These components are _compiled_ into small, efficient JavaScript modules that eliminate overhead traditionally associated with UI frameworks.
+이러한 컴포넌트들은 작고 효율적인 JavaScript 모듈로 _컴파일_ 되어 기존 UI 프레임워크에서 발생하는 오버헤드를 제거합니다.
 
-You can build your entire app with Svelte (for example, using an application framework like [SvelteKit](/docs/kit), which this tutorial will cover), or you can add it incrementally to an existing codebase. You can also ship components as standalone packages that work anywhere.
+Svelte를 사용하여 전체 앱을 구축하거나(예: 이 튜토리얼에서 다룰 [SvelteKit](/docs/kit)과 같은 애플리케이션 프레임워크 사용), 기존 코드베이스에 점진적으로 추가할 수 있습니다. 또한 어디서나 작동하는 독립형 패키지로 컴포넌트를 배포할 수도 있습니다.
 
-## How to use this tutorial
+## 이 튜토리얼 사용 방법
 
-> [!NOTE] You'll need to have basic familiarity with HTML, CSS and JavaScript to understand Svelte.
+> [!NOTE] Svelte를 이해하기 위해서는 HTML, CSS, JavaScript에 대한 기본적인 지식이 필요합니다.
 
-This tutorial is split into four main parts:
+이 튜토리얼은 크게 네 부분으로 나뉩니다:
 
-- [Basic Svelte](/tutorial/svelte/welcome-to-svelte) (you are here)
-- [Advanced Svelte](/tutorial/svelte/tweens)
-- [Basic SvelteKit](/tutorial/kit/introducing-sveltekit)
-- [Advanced SvelteKit](/tutorial/kit/optional-params)
+- [기본 Svelte](/tutorial/svelte/welcome-to-svelte) (현재 위치)
+- [고급 Svelte](/tutorial/svelte/tweens)
+- [기본 SvelteKit](/tutorial/kit/introducing-sveltekit)
+- [고급 SvelteKit](/tutorial/kit/optional-params)
 
-Each section will present an exercise designed to illustrate a feature. Later exercises build on the knowledge gained in earlier ones, so it's recommended that you go from start to finish. If necessary, you can navigate via the menu above.
+각 섹션은 특정 기능을 설명하기 위한 연습 문제를 제공합니다. 이후 연습들은 이전에 배운 지식을 기반으로 하므로, 처음부터 끝까지 순서대로 진행하는 것을 추천합니다. 필요한 경우 상단의 메뉴를 통해 이동할 수 있습니다.
 
-If you get stuck, you can click the `solve` button in the top right of the screen. (The `solve` button is disabled on sections like this one that don't include an exercise.) Try not to rely on it too much; you will learn faster by figuring out where to put each suggested code block and manually typing it in to the editor.
+막히는 부분이 있다면 화면 우측 상단의 `solve` 버튼을 클릭할 수 있습니다. (이 섹션처럼 연습 문제가 없는 경우에는 `solve` 버튼이 비활성화됩니다.) 하지만 너무 자주 의존하지 않도록 하세요. 제안된 코드 블록을 어디에 넣어야 할지 직접 파악하고 에디터에 직접 입력하는 것이 더 빠르게 학습하는 방법입니다.
