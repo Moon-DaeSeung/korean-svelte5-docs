@@ -1,8 +1,8 @@
 ---
-title: Each block bindings
+title: Each 블록 바인딩
 ---
 
-You can bind to properties inside an `each` block.
+`each` 블록 내부의 속성에 바인딩할 수 있습니다.
 
 ```svelte
 /// file: App.svelte

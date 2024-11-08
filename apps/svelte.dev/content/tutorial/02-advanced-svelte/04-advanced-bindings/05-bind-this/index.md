@@ -2,9 +2,9 @@
 title: This
 ---
 
-You can use the special `bind:this` directive to get a readonly binding to an element in your component.
+특별한 `bind:this` 지시어를 사용하여 컴포넌트의 요소에 대한 읽기 전용 바인딩을 얻을 수 있습니다.
 
-The `$effect` in this exercise attempts to create a canvas context, but `canvas` is `undefined`. Begin by declaring it at the top level of the component...
+이 연습의 `$effect`는 캔버스 컨텍스트를 생성하려고 하지만, `canvas`가 `undefined`입니다. 먼저 컴포넌트의 최상위 레벨에서 선언해봅시다...
 
 ```svelte
 /// file: App.svelte
@@ -19,11 +19,11 @@ The `$effect` in this exercise attempts to create a canvas context, but `canvas`
 </script>
 ```
 
-...then add the directive to the `<canvas>` element:
+...그런 다음 `<canvas>` 요소에 지시어를 추가합니다:
 
 ```svelte
 /// file: App.svelte
 <canvas +++bind:this={canvas}+++ width={32} height={32}></canvas>
 ```
 
-Note that the value of `canvas` will remain `undefined` until the component has mounted — in other words you can't access it until the `$effect` runs.
+`canvas`의 값은 컴포넌트가 마운트될 때까지 `undefined`로 남아있을 것입니다 - 다시 말해, `$effect`가 실행될 때까지 접근할 수 없습니다.

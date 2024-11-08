@@ -1,10 +1,10 @@
 ---
-title: Springs
+title: 스프링
 ---
 
-The `spring` function is an alternative to `tweened` that often works better for values that are frequently changing.
+`spring` 함수는 `tweened`의 대안으로, 자주 변경되는 값에 대해 더 나은 동작을 제공하는 경우가 많습니다.
 
-In this example we have two stores — one representing the circle's coordinates, and one representing its size. Let's convert them to springs:
+이 예제에서는 두 개의 스토어가 있습니다 - 하나는 원의 좌표를 나타내고, 다른 하나는 크기를 나타냅니다. 이들을 스프링으로 변환해봅시다:
 
 ```svelte
 /// file: App.svelte
@@ -16,7 +16,7 @@ In this example we have two stores — one representing the circle's coordinates
 </script>
 ```
 
-Both springs have default `stiffness` and `damping` values, which control the spring's, well... springiness. We can specify our own initial values:
+두 스프링 모두 기본 `stiffness`와 `damping` 값을 가지고 있으며, 이는 스프링의... 음, 탄성을 제어합니다. 우리만의 초기값을 지정할 수 있습니다:
 
 ```js
 /// file: App.svelte
@@ -26,4 +26,4 @@ let coords = spring({ x: 50, y: 50 }, +++{
 }+++);
 ```
 
-Waggle your mouse around, and try dragging the sliders to get a feel for how they affect the spring's behaviour. Notice that you can adjust the values while the spring is still in motion.
+마우스를 움직여보고, 슬라이더를 드래그해서 스프링의 동작에 어떤 영향을 미치는지 느껴보세요. 스프링이 여전히 움직이는 동안에도 값을 조정할 수 있다는 점을 주목하세요.

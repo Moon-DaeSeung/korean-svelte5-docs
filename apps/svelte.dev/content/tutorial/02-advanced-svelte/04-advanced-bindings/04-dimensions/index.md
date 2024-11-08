@@ -1,8 +1,8 @@
 ---
-title: Dimensions
+title: 치수
 ---
 
-You can add `clientWidth`, `clientHeight`, `offsetWidth` and `offsetHeight` bindings to any element, and Svelte will update the bound values using a [`ResizeObserver`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver):
+어떤 요소에든 `clientWidth`, `clientHeight`, `offsetWidth`, `offsetHeight` 바인딩을 추가할 수 있으며, Svelte는 [`ResizeObserver`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver)를 사용하여 바인딩된 값을 업데이트합니다:
 
 ```svelte
 /// file: App.svelte
@@ -12,6 +12,6 @@ You can add `clientWidth`, `clientHeight`, `offsetWidth` and `offsetHeight` bind
 </div>
 ```
 
-These bindings are readonly — changing the values of `w` and `h` won't have any effect on the element.
+이러한 바인딩은 읽기 전용입니다 - `w`와 `h`의 값을 변경해도 요소에는 아무런 영향을 미치지 않습니다.
 
-> [!NOTE] `display: inline` elements do not have a width or height (except for elements with 'intrinsic' dimensions, like `<img>` and `<canvas>`), and cannot be observed with a `ResizeObserver`. You will need to change the `display` style of these elements to something else, such as `inline-block`.
+> [!NOTE] `display: inline` 요소는 ('내재적' 치수를 가진 `<img>`와 `<canvas>` 같은 요소를 제외하고) 너비나 높이가 없으며, `ResizeObserver`로 관찰할 수 없습니다. 이러한 요소의 `display` 스타일을 `inline-block`과 같은 다른 것으로 변경해야 합니다.

@@ -1,12 +1,12 @@
 ---
-title: Passing snippets to components
+title: 컴포넌트에 스니펫 전달하기
 ---
 
-Since snippets — like functions — are just values, they can be passed to components as props.
+스니펫은 함수처럼 단순한 값이므로 props로 컴포넌트에 전달할 수 있습니다.
 
-Take this `<FilteredList>` component. Its job is to filter the `data` that gets passed into it, but it has no opinions about how that data should be rendered — that's the responsibility of the parent component.
+이 `<FilteredList>` 컴포넌트를 보세요. 이 컴포넌트의 역할은 전달받은 `data`를 필터링하는 것이지만, 그 데이터를 어떻게 렌더링할지에 대해서는 관여하지 않습니다 - 그것은 부모 컴포넌트의 책임입니다.
 
-We've already got some snippets defined. Begin by passing them into the `<FilteredList>`:
+이미 몇 가지 스니펫이 정의되어 있습니다. `<FilteredList>`에 이들을 전달하는 것부터 시작해봅시다:
 
 ```svelte
 /// file: App.svelte
@@ -18,7 +18,7 @@ We've already got some snippets defined. Begin by passing them into the `<Filter
 ></FilteredList>
 ```
 
-Then, on the other side, declare `header` and `row` as props:
+그런 다음, 다른 쪽에서 `header`와 `row`를 props로 선언합니다:
 
 ```svelte
 /// file: FilteredList.svelte
@@ -29,7 +29,7 @@ Then, on the other side, declare `header` and `row` as props:
 </script>
 ```
 
-Finally, replace the placeholder content with render tags:
+마지막으로, 임시 콘텐츠를 렌더 태그로 교체합니다:
 
 ```svelte
 /// file: FilteredList.svelte
@@ -44,4 +44,4 @@ Finally, replace the placeholder content with render tags:
 </div>
 ```
 
-Never again will you have to memorize the hex code for `MistyRose` or `PeachPuff`.
+이제 더 이상 `MistyRose`나 `PeachPuff`의 16진수 코드를 외울 필요가 없습니다.

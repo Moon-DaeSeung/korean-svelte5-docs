@@ -1,14 +1,14 @@
 ---
-title: Snippets and render tags
+title: 스니펫과 렌더 태그
 ---
 
-Snippets allow you to reuse content within a component, without extracting it out into a separate file.
+스니펫을 사용하면 별도의 파일로 분리하지 않고도 컴포넌트 내에서 콘텐츠를 재사용할 수 있습니다.
 
-In this exercise, we're creating a table of the [three wise monkeys](https://en.wikipedia.org/wiki/Three_wise_monkeys), along with their unicode escape sequences and HTML entities. So far, we have but a single monkey.
+이 연습에서는 [세 현명한 원숭이](https://en.wikipedia.org/wiki/Three_wise_monkeys)의 유니코드 이스케이프 시퀀스와 HTML 엔티티를 포함한 테이블을 만들고 있습니다. 지금은 한 마리의 원숭이만 있습니다.
 
-We could duplicate the markup, of course. Or we could create an array of `{ emoji, description }` objects and pass it into an `{#each ...}` block. But a neater solution is to encapsulate the markup in a reusable block.
+물론 마크업을 복제할 수도 있습니다. 또는 `{ emoji, description }` 객체의 배열을 만들어 `{#each ...}` 블록에 전달할 수도 있습니다. 하지만 마크업을 재사용 가능한 블록으로 캡슐화하는 것이 더 깔끔한 해결책입니다.
 
-Begin by _declaring a snippet_:
+먼저 _스니펫을 선언_합니다:
 
 ```svelte
 /// file: App.svelte
@@ -22,7 +22,7 @@ Begin by _declaring a snippet_:
 +++{/snippet}+++
 ```
 
-The monkey is no longer visible until we _render_ it. Let's do that:
+스니펫을 _렌더링_할 때까지 원숭이는 보이지 않습니다. 렌더링해 봅시다:
 
 ```svelte
 /// file: App.svelte
@@ -33,7 +33,7 @@ The monkey is no longer visible until we _render_ it. Let's do that:
 </tbody>
 ```
 
-Before we can use the snippet for the rest of our monkeys, we need to pass data into the snippet. Snippets can have zero or more parameters:
+스니펫의 나머지 원숭이들을 사용하기 전에 스니펫에 데이터를 전달해야 합니다. 스니펫은 0개 이상의 매개변수를 가질 수 있습니다:
 
 ```svelte
 /// file: App.svelte
@@ -44,15 +44,15 @@ Before we can use the snippet for the rest of our monkeys, we need to pass data 
 </tbody>
 ```
 
-> [!NOTE] You can also use destructured parameters, if you like.
+> [!NOTE] 원하는 경우 구조 분해된 매개변수를 사용할 수도 있습니다.
 
-Add the rest of the monkeys:
+나머지 원숭이들을 추가합니다:
 
 - `'🙈', 'see no evil'`
 - `'🙉', 'hear no evil'`
 - `'🙊', 'speak no evil'`
 
-Finally, delete the `<script>` block we no longer need it:
+마지막으로, 더 이상 필요하지 않은 `<script>` 블록을 삭제합니다:
 
 ```svelte
 /// file: App.svelte
@@ -62,4 +62,4 @@ Finally, delete the `<script>` block we no longer need it:
 </script>---
 ```
 
-> [!NOTE] Snippets can be declared anywhere in your component, but, like functions, are only visible to render tags in the same 'scope' or a child scope.
+> [!NOTE] 스니펫은 컴포넌트의 어디에서나 선언할 수 있지만, 함수처럼 같은 '스코프' 또는 자식 스코프의 렌더 태그에서만 볼 수 있습니다.
