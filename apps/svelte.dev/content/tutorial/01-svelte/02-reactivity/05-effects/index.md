@@ -1,14 +1,14 @@
 ---
-title: Effects
+title: 이펙트
 ---
 
-So far we've talked about reactivity in terms of state. But that's only half of the equation — state is only reactive if something is _reacting_ to it, otherwise it's just a sparkling variable.
+지금까지 우리는 상태 측면에서 반응성에 대해 이야기했습니다. 하지만 이는 전체 방정식의 절반에 불과합니다 — 상태는 그것에 _반응하는_ 무언가가 있을 때만 반응형이 되며, 그렇지 않으면 그저 반짝이는 변수일 뿐입니다.
 
-The thing that reacts is called an _effect_. You've already encountered effects — the ones that Svelte creates on your behalf to update the DOM in response to state changes — but you can also create your own with the `$effect` rune.
+반응하는 것을 _이펙트_ 라고 합니다. 여러분은 이미 이펙트를 접해보셨습니다 — Svelte가 상태 변경에 대응하여 DOM을 업데이트하기 위해 여러분을 대신하여 만드는 이펙트들입니다 — 하지만 `$effect` 룬을 사용하여 직접 만들 수도 있습니다.
 
-> [!NOTE] Most of the time, you shouldn't. `$effect` is best thought of as an escape hatch, rather than something to use frequently. If you can put your side effects in an [event handler](dom-events), for example, that's almost always preferable.
+> [!NOTE] 대부분의 경우에는 그럴 필요가 없습니다. `$effect`는 자주 사용하는 것이 아닌 비상구로 생각하는 것이 좋습니다. 예를 들어, 부수 효과를 [이벤트 핸들러](dom-events)에 넣을 수 있다면, 그것이 거의 항상 더 좋은 방법입니다.
 
-Let's say we want to use `setInterval` to keep track of how long the component has been mounted. Create the effect:
+컴포넌트가 마운트된 후 얼마나 시간이 지났는지 `setInterval`을 사용하여 추적하고 싶다고 가정해봅시다. 이펙트를 만들어보세요:
 
 ```svelte
 /// file: App.svelte
@@ -24,9 +24,9 @@ Let's say we want to use `setInterval` to keep track of how long the component h
 </script>
 ```
 
-Click the 'speed up' button a few times and notice that `elapsed` ticks up faster, because we're calling `setInterval` each time `interval` gets smaller.
+'speed up' 버튼을 몇 번 클릭해보세요. `interval`이 작아질 때마다 `setInterval`을 호출하기 때문에 `elapsed`가 더 빠르게 증가하는 것을 볼 수 있습니다.
 
-If we then click the 'slow down' button... well, it doesn't work. That's because we're not clearing out the old intervals when the effect updates. We can fix that by returning a cleanup function:
+그런 다음 'slow down' 버튼을 클릭하면... 음, 작동하지 않습니다. 이는 이펙트가 업데이트될 때 이전 인터벌들을 정리하지 않기 때문입니다. 정리 함수를 반환하여 이를 해결할 수 있습니다:
 
 ```js
 /// file: App.svelte
@@ -41,8 +41,8 @@ $effect(() => {
 });
 ```
 
-The cleanup function is called immediately before the effect function re-runs when `interval` changes, and also when the component is destroyed.
+정리 함수는 `interval`이 변경될 때 이펙트 함수가 다시 실행되기 직전에 호출되며, 컴포넌트가 제거될 때도 호출됩니다.
 
-If the effect function doesn't read any state when it runs, it will only run once, when the component mounts.
+이펙트 함수가 실행될 때 어떤 상태도 읽지 않는다면, 컴포넌트가 마운트될 때 한 번만 실행됩니다.
 
-> [!NOTE] Effects do not run during server-side rendering.
+> [!NOTE] 이펙트는 서버 사이드 렌더링 중에는 실행되지 않습니다.
