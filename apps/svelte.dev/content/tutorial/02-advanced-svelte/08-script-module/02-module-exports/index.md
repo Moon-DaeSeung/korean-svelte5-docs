@@ -1,8 +1,8 @@
 ---
-title: Exports
+title: 내보내기
 ---
 
-Anything exported from a `module` script block becomes an export from the module itself. Let's export a `stopAll` function:
+`module` 스크립트 블록에서 내보낸 모든 것은 모듈 자체의 내보내기가 됩니다. `stopAll` 함수를 내보내봅시다:
 
 ```svelte
 /// file: AudioPlayer.svelte
@@ -15,7 +15,7 @@ Anything exported from a `module` script block becomes an export from the module
 </script>
 ```
 
-We can now import `stopAll` in `App.svelte`...
+이제 `App.svelte`에서 `stopAll`을 가져올 수 있습니다...
 
 ```svelte
 /// file: App.svelte
@@ -25,7 +25,7 @@ We can now import `stopAll` in `App.svelte`...
 </script>
 ```
 
-...and use it in an event handler:
+...그리고 이벤트 핸들러에서 사용할 수 있습니다:
 
 ```svelte
 /// file: App.svelte
@@ -35,9 +35,9 @@ We can now import `stopAll` in `App.svelte`...
 	{/each}
 
 +++	<button onclick={stopAll}>
-		stop all
+		모두 정지
 	</button>+++
 </div>
 ```
 
-> [!NOTE] You can't have a default export, because the component _is_ the default export.
+> [!NOTE] 기본 내보내기는 사용할 수 없습니다. 컴포넌트 자체가 기본 내보내기이기 때문입니다.

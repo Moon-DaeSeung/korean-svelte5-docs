@@ -1,16 +1,16 @@
 ---
-title: The @debug tag
+title: @debug 태그
 ---
 
-Occasionally, it's useful to inspect a piece of data as it flows through your app.
+때때로 앱을 통해 흐르는 데이터를 검사하는 것이 유용할 수 있습니다.
 
-One approach is to use `console.log(...)` inside your markup. If you want to pause execution, though, you can use the `{@debug ...}` tag with a comma-separated list of values you want to inspect:
+한 가지 방법은 마크업 내에서 `console.log(...)`를 사용하는 것입니다. 하지만 실행을 일시 중지하고 싶다면, 검사하고 싶은 값들의 쉼표로 구분된 목록과 함께 `{@debug ...}` 태그를 사용할 수 있습니다:
 
 ```svelte
 /// file: App.svelte
 +++{@debug user}+++
 
-<h1>Hello {user.firstname}!</h1>
+<h1>안녕하세요 {user.firstname}!</h1>
 ```
 
-If you now open your devtools and start interacting with the `<input>` elements, you'll trigger the debugger as the value of `user` changes. (Note that the call stack and local variables will be hidden in this tutorial, because of iframe security restrictions.)
+이제 개발자 도구를 열고 `<input>` 요소들과 상호작용하기 시작하면, `user` 값이 변경될 때 디버거가 트리거될 것입니다. (iframe 보안 제한으로 인해 이 튜토리얼에서는 콜 스택과 로컬 변수가 숨겨질 것입니다.)

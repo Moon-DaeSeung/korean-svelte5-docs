@@ -1,15 +1,15 @@
 ---
-title: Congratulations!
+title: 축하합니다!
 ---
 
-You've now finished the Svelte tutorial and are ready to start building.
+이제 Svelte 튜토리얼을 마치셨고 앱을 만들 준비가 되었습니다.
 
-The next two parts of the tutorial will focus on SvelteKit, a full-fledged framework for creating apps of all shapes and sizes.
+튜토리얼의 다음 두 부분은 모든 크기와 형태의 앱을 만들기 위한 완전한 프레임워크인 SvelteKit에 초점을 맞출 것입니다.
 
-If you're suffering from information overload and aren't ready to go through the SvelteKit tutorial yet, don't worry! You can use your existing Svelte knowledge without learning all of SvelteKit. Just run this in your terminal and follow the prompts...
+만약 정보 과부하를 겪고 있어서 아직 SvelteKit 튜토리얼을 진행할 준비가 되지 않았다면 걱정하지 마세요! SvelteKit의 모든 것을 배우지 않고도 기존의 Svelte 지식을 사용할 수 있습니다. 터미널에서 다음을 실행하고 프롬프트를 따르기만 하면 됩니다...
 
 ```bash
 npx sv create
 ```
 
-...and start editing `src/routes/+page.svelte`. When you're ready, click the link below to continue your journey.
+...그리고 `src/routes/+page.svelte`를 편집하기 시작하세요. 준비가 되면 아래 링크를 클릭하여 여정을 계속하세요.

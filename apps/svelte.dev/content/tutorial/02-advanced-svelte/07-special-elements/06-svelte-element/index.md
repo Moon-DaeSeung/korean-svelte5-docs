@@ -2,24 +2,24 @@
 title: <svelte:element>
 ---
 
-Sometimes you don't know in advance which element needs to be rendered. Rather than having a long list of `{#if ...}` blocks...
+때로는 어떤 요소를 렌더링해야 할지 미리 알 수 없는 경우가 있습니다. 긴 `{#if ...}` 블록 목록을 사용하는 대신...
 
 ```svelte
 /// file: App.svelte
 {#if selected === 'h1'}
-	<h1>I'm a <code>&lt;h1&gt;</code> element</h1>
+	<h1>저는 <code>&lt;h1&gt;</code> 요소입니다</h1>
 {:else}
-	<p>TODO others</p>
+	<p>TODO 다른 것들</p>
 {/if}
 ```
 
-...we can use `<svelte:element>`:
+...`<svelte:element>`를 사용할 수 있습니다:
 
 ```svelte
 /// file: App.svelte
 +++<svelte:element this={selected}>
-	I'm a <code>&lt;{selected}&gt;</code> element
+	저는 <code>&lt;{selected}&gt;</code> 요소입니다
 </svelte:element>+++
 ```
 
-The `this` value can be any string, or a falsy value — if it's falsy, no element is rendered.
+`this` 값은 어떤 문자열이나 falsy 값이 될 수 있습니다 - falsy인 경우 요소가 렌더링되지 않습니다.
