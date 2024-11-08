@@ -1,8 +1,8 @@
 ---
-title: Custom JS transitions
+title: 커스텀 JS 트랜지션
 ---
 
-While you should generally use CSS for transitions as much as possible, there are some effects that can't be achieved without JavaScript, such as a typewriter effect:
+일반적으로 트랜지션에는 가능한 한 CSS를 사용해야 하지만, 타이프라이터 효과와 같이 JavaScript 없이는 구현할 수 없는 효과들이 있습니다:
 
 ```js
 /// file: App.svelte
@@ -10,7 +10,7 @@ function typewriter(node, { speed = 1 }) {
 	const valid = node.childNodes.length === 1 && node.childNodes[0].nodeType === Node.TEXT_NODE;
 
 	if (!valid) {
-		throw new Error(`This transition only works on elements with a single text node child`);
+		throw new Error(`이 트랜지션은 단일 텍스트 노드 자식을 가진 요소에서만 작동합니다`);
 	}
 
 	+++const text = node.textContent;

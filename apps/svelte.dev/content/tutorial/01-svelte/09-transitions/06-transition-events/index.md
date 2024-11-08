@@ -1,18 +1,18 @@
 ---
-title: Transition events
+title: 트랜지션 이벤트
 ---
 
-It can be useful to know when transitions are beginning and ending. Svelte dispatches events that you can listen to like any other DOM event:
+트랜지션이 시작되고 끝나는 시점을 아는 것이 유용할 수 있습니다. Svelte는 다른 DOM 이벤트처럼 감지할 수 있는 이벤트를 발생시킵니다:
 
 ```svelte
 /// file: App.svelte
 <p
 	transition:fly={{ y: 200, duration: 2000 }}
-+++	onintrostart={() => status = 'intro started'}
-	onoutrostart={() => status = 'outro started'}
-	onintroend={() => status = 'intro ended'}
-	onoutroend={() => status = 'outro ended'}+++
++++	onintrostart={() => status = '진입 시작됨'}
+	onoutrostart={() => status = '퇴장 시작됨'}
+	onintroend={() => status = '진입 종료됨'}
+	onoutroend={() => status = '퇴장 종료됨'}+++
 >
-	Flies in and out
+	날아 들어오고 나갑니다
 </p>
 ```
