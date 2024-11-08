@@ -1,27 +1,27 @@
 ---
-title: Keyed each blocks
+title: 키가 있는 each 블록
 ---
 
-By default, when you modify the value of an `each` block, it will add and remove DOM nodes at the _end_ of the block, and update any values that have changed. That might not be what you want.
+기본적으로 `each` 블록의 값을 수정할 때, 블록의 _끝_에서 DOM 노드를 추가하고 제거하며, 변경된 값들을 업데이트합니다. 이것이 원하는 동작이 아닐 수 있습니다.
 
-It's easier to show why than to explain. Inside `Thing.svelte`, `name` is a dynamic prop but `emoji` is a constant.
+설명하는 것보다 보여주는 것이 더 쉽습니다. `Thing.svelte` 내부에서 `name`은 동적 prop이지만 `emoji`는 상수입니다.
 
-Click the 'Remove first thing' button a few times, and notice what happens:
+'Remove first thing' 버튼을 몇 번 클릭하고 어떤 일이 일어나는지 보세요:
 
-1. It removes the last component.
-2. It then updates the `name` value in the remaining DOM nodes, but not the emoji.
+1. 마지막 컴포넌트를 제거합니다.
+2. 그런 다음 남아있는 DOM 노드의 `name` 값을 업데이트하지만, 이모지는 업데이트하지 않습니다.
 
-> [!NOTE] If you're coming from React, this might seem strange, because you're used to the entire component re-rendering when state changes. Svelte works differently: the component 'runs' once, and subsequent updates are 'fine-grained'. This makes things faster and gives you more control.
+> [!NOTE] React를 사용하다 오셨다면 이상하게 느껴질 수 있습니다. React에서는 상태가 변경될 때 전체 컴포넌트가 다시 렌더링되는 것에 익숙하기 때문입니다. Svelte는 다르게 작동합니다: 컴포넌트는 한 번 '실행'되고, 이후의 업데이트는 '세밀하게' 이루어집니다. 이는 더 빠르고 더 많은 제어가 가능합니다.
 
-One way to fix it would be to make `emoji` a [`$derived`](derived-state) value. But it makes more sense to remove the first `<Thing>` component altogether than to remove the _last_ one and update all the others.
+이를 해결하는 한 가지 방법은 `emoji`를 [`$derived`](derived-state) 값으로 만드는 것입니다. 하지만 마지막 `<Thing>` 컴포넌트를 제거하고 다른 모든 것을 업데이트하는 것보다 첫 번째 `<Thing>` 컴포넌트를 완전히 제거하는 것이 더 합리적입니다.
 
-To do that, we specify a unique _key_ for each iteration of the `each` block:
+이를 위해 `each` 블록의 각 반복에 대해 고유한 _키_를 지정합니다:
 
 ```svelte
 /// file: App.svelte
-{#each things as thing (+++thing.id+++)}
+{#each things as thing (thing.id)}
 	<Thing name={thing.name}/>
 {/each}
 ```
 
-> [!NOTE] You can use any object as the key, as Svelte uses a `Map` internally — in other words you could do `(thing)` instead of `(thing.id)`. Using a string or number is generally safer, however, since it means identity persists without referential equality, for example when updating with fresh data from an API server.
+> [!NOTE] Svelte는 내부적으로 `Map`을 사용하기 때문에 키로 어떤 객체든 사용할 수 있습니다 — 즉, `(thing.id)` 대신 `(thing)`을 사용할 수 있습니다. 하지만 문자열이나 숫자를 사용하는 것이 일반적으로 더 안전합니다. API 서버에서 새로운 데이터로 업데이트할 때와 같이 참조 동등성 없이도 식별성이 유지되기 때문입니다.
