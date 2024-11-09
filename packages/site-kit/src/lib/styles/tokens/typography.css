@@ -2,7 +2,7 @@
 
 :root {
 	--sk-font-family-ui: 'Fira Sans', -apple-system, sans-serif;
-	--sk-font-family-body: Georgia, serif;
+	--sk-font-family-body: Pretendard, Georgia, serif;
 	--sk-font-family-heading: 'DM Serif Display', Georgia, serif;
 	--sk-font-family-mono: 'Fira Mono', monospace;
 
@@ -23,10 +23,8 @@
 	--sk-font-h1: 500 var(--sk-font-size-h1) / 1.2 var(--sk-font-family-heading);
 	--sk-font-h2: 500 var(--sk-font-size-h2) / 1.2 var(--sk-font-family-heading);
 	--sk-font-h3: 500 var(--sk-font-size-h3) / 1.2 var(--sk-font-family-heading);
-	--sk-font-body: 400 var(--sk-font-size-body) / var(--sk-line-height-body)
-		var(--sk-font-family-body);
-	--sk-font-body-small: 400 var(--sk-font-size-body-small) / var(--sk-line-height-body-small)
-		var(--sk-font-family-body);
+	--sk-font-body: 400 var(--sk-font-size-body) / var(--sk-line-height-body) var(--sk-font-family-body);
+	--sk-font-body-small: 400 var(--sk-font-size-body-small) / var(--sk-line-height-body-small) var(--sk-font-family-body);
 	--sk-font-ui-small: 400 var(--sk-font-size-ui-small) / 1.5 var(--sk-font-family-ui);
 	--sk-font-ui-medium: 400 var(--sk-font-size-ui-medium) / 1.5 var(--sk-font-family-ui);
 	--sk-font-ui-large: 400 var(--sk-font-size-ui-large) / 1.5 var(--sk-font-family-ui);
