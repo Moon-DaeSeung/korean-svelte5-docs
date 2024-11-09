@@ -13,7 +13,7 @@ const redirects = new Map([
 ]);
 
 export async function load({ params }) {
-	if (!params.slug || params.slug === 'svelte') redirect(307, '/tutorial/svelte/welcome-to-svelte');
+	if (!params.slug || params.slug === 'svelte') redirect(307, '/tutorial/svelte/inflearn');
 	if (params.slug === 'kit') redirect(307, '/tutorial/kit/introducing-sveltekit');
 
 	const r = redirects.get(params.slug);
