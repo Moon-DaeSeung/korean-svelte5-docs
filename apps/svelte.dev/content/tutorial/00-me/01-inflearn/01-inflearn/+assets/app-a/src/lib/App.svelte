@@ -2,7 +2,7 @@
   const projects = [
     {
       title: 'NotionPresso',
-      description: '노션 콘텐츠를 스벨트로 렌더링하는 라이브러리',
+      description: '노션 콘텐츠를 웹사이트로 렌더링하트 라이브러리',
       status: 'in-progress',
       statusText: '진행 중',
       features: [
